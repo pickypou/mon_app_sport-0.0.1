@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../Components/input_signup.dart';
 import '../Components/signup_button.dart';
-import '../Components/text_button_login.dart';
 import '../Widgets/title_signup.dart';
+import 'home/components/text_button_login.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});

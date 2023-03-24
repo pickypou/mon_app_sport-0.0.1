@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../pages/login_page.dart';
+import '../../../theme/theme_styles.dart';
+import '../../login/login_page.dart';
 
 
 
@@ -20,10 +20,7 @@ class TextButtonLogin extends StatelessWidget {
         }
 
         , child: Text('Déjà un  compte ?, connectez-vous',
-      style: GoogleFonts.comfortaa(
-          color: Colors.black,
-          fontWeight: FontWeight.bold
-      ),)
+      style: textButton)
 
     );
   }

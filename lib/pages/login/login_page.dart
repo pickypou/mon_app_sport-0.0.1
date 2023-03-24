@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../Components/login_button.dart';
-import '../Components/input_login.dart';
-import '../Components/text_button_signup.dart';
-import '../Widgets/title_connexion.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
+import '../../Components/login_button.dart';
+import '../../Components/input_login.dart';
+import '../../Components/text_button_signup.dart';
+import '../../Widgets/title_connexion.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -13,6 +14,7 @@ class LoginPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'loginPage',
       home: Scaffold(
+        backgroundColor: kBody,
         body: SingleChildScrollView(
             child: Center(
           child: Column(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mon_app_sport/Components/signout_button.dart';
 import 'package:mon_app_sport/Components/text_activity_tracking.dart';
 
+import '../Components/info_user/image_picture.dart';
 import '../Components/info_user/profile_picture.dart';
 import '../Components/text_programm_activity.dart';
 import '../Components/info_user/user_info.dart';

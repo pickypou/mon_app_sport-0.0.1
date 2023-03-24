@@ -6,54 +6,8 @@ import 'package:mon_app_sport/pages/account_page.dart';
 
 import '../../screens/get_user_id.dart';
 import '../../variables/my_variables.dart';
+import 'image_picture.dart';
 
-FirebaseStorage storage = FirebaseStorage.instance;
-Reference storageRef = storage.ref('Users').child('$userID.png');
-
-class ImagePicture extends StatefulWidget {
-  const ImagePicture({super.key});
-  @override
-  _imagePictureState createState() => _imagePictureState();
-}
-
-class _imagePictureState extends State<ImagePicture> {
-  String? userPhotoUrl;
-  String? defaultUrl =
-      'https://icon-library.com/images/default-profile-icon/default-profile-icon-16.jpg';
-
-  @override
-  void initState() {
-    super.initState();
-    getProfileImage();
-  }
-
-  getProfileImage() {
-    Reference ref = storage.ref('Users').child('$userID.png');
-    ref.getDownloadURL().then((downloadUrl) {
-      setState(() {
-        userPhotoUrl = downloadUrl.toString();
-      });
-    }).catchError((e) {
-      setState(() {
-        print('Un problème est survenu: ${e.error}');
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      width: 200,
-      child: CircleAvatar(
-        backgroundColor: Colors.grey,
-        backgroundImage: userPhotoUrl == null
-            ? NetworkImage(defaultUrl!)
-            : NetworkImage(userPhotoUrl!),
-      ),
-    );
-  }
-}
 
 class ProfilePicture extends StatefulWidget {
   const ProfilePicture({super.key});
@@ -74,16 +28,16 @@ class _ProfilePictureState extends State<ProfilePicture> {
   }
   refreshPage(context){
     Navigator.pushReplacement(context,
-        PageRouteBuilder(
-            pageBuilder: (_, __, ___)=>const AccountPage(),
+      PageRouteBuilder(
+        pageBuilder: (_, __, ___)=>const AccountPage(),
         transitionDuration: const Duration(seconds: 0),
-        ),
+      ),
     );
   }
 
   Future getImage() async {
     final XFile? pickedFile =
-        await picker.pickImage(source: ImageSource.gallery);
+    await picker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) {
