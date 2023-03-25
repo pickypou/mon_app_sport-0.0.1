@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../Components/info_user/user_info.dart';
 import '../main.dart';
-import '../pages/account_page.dart';
+import '../pages/account/account_page.dart';
 
 String? userID;
 Future<void> main() async {

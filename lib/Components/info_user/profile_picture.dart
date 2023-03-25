@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mon_app_sport/pages/account_page.dart';
+import 'package:mon_app_sport/pages/account/account_page.dart';
 
 import '../../screens/get_user_id.dart';
 import '../../variables/my_variables.dart';

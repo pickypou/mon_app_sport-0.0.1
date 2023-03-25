@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../pages/account_page.dart';
-import '../pages/signup_page.dart';
+import '../../../theme/theme_styles.dart';
+import '../../account/account_page.dart';
+import '../../signup_page.dart';
 
 class TextButtonSignup extends StatelessWidget {
   const TextButtonSignup({super.key});
@@ -17,10 +18,8 @@ class TextButtonSignup extends StatelessWidget {
           );
         }
         , child: Text('Pas encore de  compte ?, inscrivez-vous',
-      style: GoogleFonts.comfortaa(
-          color: Colors.black,
-          fontWeight: FontWeight.bold
-      ),)
+      style: textButton,
+      ),
 
     );
   }

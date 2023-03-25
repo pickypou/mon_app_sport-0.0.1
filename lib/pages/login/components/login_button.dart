@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mon_app_sport/function/login_to_firebase.dart';
-
-
+import 'package:mon_app_sport/theme/theme_colors.dart';
+import 'package:mon_app_sport/theme/theme_styles.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -11,7 +11,7 @@ class LoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
+        backgroundColor: kButton,
         padding: const EdgeInsets.fromLTRB(130, 20, 130, 20),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -19,14 +19,13 @@ class LoginButton extends StatelessWidget {
       ),
       child: Text(
         "connexion".toUpperCase(),
-        style: GoogleFonts.comfortaa(
-          color: Colors.grey,
-          fontSize: 20.0,
+        style: GoogleFonts.lora(
+          fontSize: 20,
+          fontWeight: FontWeight.w200,
+          color: kTextButton,
         ),
       ),
-      onPressed: () {
-        loginToFirebase();
-        },
+      onPressed: () {loginToFirebase();},
     );
   }
 }

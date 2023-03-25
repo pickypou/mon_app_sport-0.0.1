@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
 
-import '../function/login_to_firebase.dart';
+import '../../../function/login_to_firebase.dart';
+import '../../../theme/theme_styles.dart';
 
 
 class InputLogin extends StatelessWidget {
@@ -12,9 +14,9 @@ class InputLogin extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.grey.shade300),
+            border: Border.all(width: 1, color: kIcon),
             borderRadius: BorderRadius.circular(30),
-            color: const Color.fromRGBO(255, 255, 255, 0.1),
+            color: const Color.fromRGBO(255, 255, 255, 0.3),
           ),
           height: 60,
           child: Row(
@@ -28,7 +30,7 @@ class InputLogin extends StatelessWidget {
                 child: const Icon(
                   Icons.email_rounded,
                   size: 30,
-                  color: Colors.grey,
+                  color: kIcon,
                 ),
               ),
               SizedBox(
@@ -37,14 +39,14 @@ class InputLogin extends StatelessWidget {
                 child: TextField(
                   controller: emailField,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.comfortaa(
+                  style: GoogleFonts.lora(
                     fontSize: 20,
-                    color: Colors.black,
+                    color: kIcon,
                     fontWeight: FontWeight.bold,
                   ),
                   decoration: InputDecoration(
                       hintText: 'Email',
-                      hintStyle: GoogleFonts.comfortaa(color: Colors.black),
+                      hintStyle: GoogleFonts.lora(color: kTextColors),
                       border: InputBorder.none),
                 ),
               ),
@@ -56,9 +58,9 @@ class InputLogin extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.grey.shade300),
+            border: Border.all(width: 1, color: kIcon),
             borderRadius: BorderRadius.circular(30),
-            color: const Color.fromRGBO(255, 255, 255, 0.1),
+            color: const Color.fromRGBO(255, 255, 255, 0.3),
           ),
           height: 60,
           child: Row(
@@ -68,31 +70,30 @@ class InputLogin extends StatelessWidget {
                 width: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.grey.shade300),
+                    color: Colors.white60),
                 child: const Icon(
                   Icons.lock_outline,
                   size: 30,
-                  color: Colors.grey,
+                  color: kIcon,
                 ),
               ),
               SizedBox(
                 height: 60,
                 width: 230,
+
+
                 child: TextField(
                   controller: passwordField,
                   textAlign: TextAlign.center,
                   obscureText: true,
-                  style: GoogleFonts.comfortaa(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                  style: textButton,
+                    decoration: InputDecoration(
+                    hintText: 'Mot de passe',
+                    hintStyle: textButton,
+                    border: InputBorder.none),
                   ),
-                  decoration: InputDecoration(
-                      hintText: 'Mot de passe',
-                      hintStyle: GoogleFonts.comfortaa(color: Colors.black),
-                      border: InputBorder.none),
                 ),
-              ),
+
             ],
           ),
         ),

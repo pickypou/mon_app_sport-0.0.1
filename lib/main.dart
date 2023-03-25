@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mon_app_sport/pages/home/components/text_button_login.dart';
 import 'package:mon_app_sport/pages/home/components/widgets/images.dart';
 import 'package:mon_app_sport/pages/home/components/widgets/subtitle_home.dart';
-import 'package:mon_app_sport/pages/home/components/widgets/title_home.dart';
+import 'package:mon_app_sport/pages/home/widgets/title_home.dart';
 import 'package:mon_app_sport/screens/initialize_app.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 

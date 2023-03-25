@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
-import '../../Components/login_button.dart';
-import '../../Components/input_login.dart';
-import '../../Components/text_button_signup.dart';
-import '../../Widgets/title_connexion.dart';
+import 'components/login_button.dart';
+import 'components/input_login.dart';
+import 'components/text_button_signup.dart';
+import 'widgets/title_connexion.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'loginPage',
-      home: Scaffold(
-        backgroundColor: kBody,
-        body: SingleChildScrollView(
-            child: Center(
+    return Scaffold(
+      backgroundColor: kBody,
+      body: SingleChildScrollView(
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +34,6 @@ class LoginPage extends StatelessWidget {
               const TextButtonSignup()
             ],
           ),
-        ),
         ),
       ),
     );
