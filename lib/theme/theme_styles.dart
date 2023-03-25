@@ -30,7 +30,12 @@ TextStyle button = GoogleFonts.lora(
   color: kTextButton,
 );
 TextStyle text = GoogleFonts.lora(
-  fontSize: 16,
+  fontSize: 18,
+  fontWeight: FontWeight.w200,
+  color: kTextColors,
+);
+TextStyle titleAppBar = GoogleFonts.lora(
+  fontSize: 20,
   fontWeight: FontWeight.w200,
   color: kTextColors,
 );

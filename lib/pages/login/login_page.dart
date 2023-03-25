@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mon_app_sport/Components/appbar.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 import 'components/login_button.dart';
 import 'components/input_login.dart';
@@ -11,6 +12,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const MyAppBar(title: 'Connexion',),
       backgroundColor: kBody,
       body: SingleChildScrollView(
         child: Center(
