@@ -12,16 +12,27 @@ TextStyle subTitle = GoogleFonts.lora(
   fontWeight: FontWeight.w500,
   color: kTextColors,
 );
+TextStyle textInput = GoogleFonts.lora(
+  fontSize: 20,
+  fontWeight: FontWeight.w200,
+  color: kTextColors,
+);
 TextStyle textButton = GoogleFonts.lora(
   fontSize: 20,
   fontWeight: FontWeight.w200,
   color: kTextColors,
 );
 
+
 TextStyle button = GoogleFonts.lora(
   fontSize: 20,
   fontWeight: FontWeight.w200,
   color: kTextButton,
+);
+TextStyle text = GoogleFonts.lora(
+  fontSize: 16,
+  fontWeight: FontWeight.w200,
+  color: kTextColors,
 );
 
 

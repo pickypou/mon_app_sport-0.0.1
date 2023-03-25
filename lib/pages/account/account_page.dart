@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/Components/signout_button.dart';
-import 'package:mon_app_sport/Components/text_activity_tracking.dart';
+import 'package:mon_app_sport/pages/account/components/signout_button.dart';
+import 'package:mon_app_sport/pages/account/components/text_activity_tracking.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
 
-import '../../Components/info_user/image_picture.dart';
-import '../../Components/info_user/profile_picture.dart';
-import '../../Components/text_programm_activity.dart';
-import '../../Components/info_user/user_info.dart';
-import '../../Widgets/account_title.dart';
+import 'info_user/image_picture.dart';
+import 'info_user/profile_picture.dart';
+import 'components/text_programm_activity.dart';
+import 'info_user/user_info.dart';
+import 'widgets/account_title.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -16,6 +17,7 @@ class AccountPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: kBody,
         appBar: AppBar(
           title: const Text('ma page perso'),
         ),

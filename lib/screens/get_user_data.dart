@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/Components/info_user/user_info.dart';
+import 'package:mon_app_sport/pages/account/info_user/user_info.dart';
 
 import 'get_user_id.dart';
 

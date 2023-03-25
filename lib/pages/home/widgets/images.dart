@@ -4,7 +4,7 @@ Widget image = Container(
   height: 250,
   width: 250,
   decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(10),
+    borderRadius: BorderRadius.circular(30),
     boxShadow: [
       BoxShadow(
         color: Colors.black.withOpacity(0.2),

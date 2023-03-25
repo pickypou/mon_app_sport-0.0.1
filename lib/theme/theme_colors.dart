@@ -8,3 +8,4 @@ const Color kBody = Color(0xFFF1E4F3);
 const Color kIcon = Color(0xFF6E466C);
 const Color kButton = Color(0xFF6E466C);
 const Color kTextButton = Color(0xFFF1E4F3);
+const Color kBorder = Color(0xFF6E466C);

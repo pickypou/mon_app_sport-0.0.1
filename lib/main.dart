@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/pages/home/components/text_button_login.dart';
-import 'package:mon_app_sport/pages/home/components/widgets/images.dart';
-import 'package:mon_app_sport/pages/home/components/widgets/subtitle_home.dart';
-import 'package:mon_app_sport/pages/home/widgets/title_home.dart';
+import 'package:mon_app_sport/pages/home/home_page.dart';
 import 'package:mon_app_sport/screens/initialize_app.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 
@@ -13,31 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: kBody,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              titleHome,
-              const SizedBox(
-                height: 50,
-              ),
-              subTitleHome,
-              const SizedBox(
-                height: 50,
-              ),
-              image,
-              const SizedBox(
-                height: 50,
-              ),
-              const TextButtonLogin(),
-            ],
-          ),
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }

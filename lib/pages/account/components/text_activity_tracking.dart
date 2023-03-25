@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../pages/tracking_progress_page.dart';
+import 'package:mon_app_sport/theme/theme_styles.dart';
+import '../../tracking_progress_page.dart';
 
 
 class TextActivityTracking extends StatelessWidget {
@@ -16,11 +17,7 @@ class TextActivityTracking extends StatelessWidget {
           );
         },
         child: Text('Suivre mon activité',
-          style: GoogleFonts.comfortaa(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),)
+          style: textButton,)
 
     );
   }

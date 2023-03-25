@@ -39,14 +39,10 @@ class InputLogin extends StatelessWidget {
                 child: TextField(
                   controller: emailField,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.lora(
-                    fontSize: 20,
-                    color: kIcon,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: textInput,
                   decoration: InputDecoration(
                       hintText: 'Email',
-                      hintStyle: GoogleFonts.lora(color: kTextColors),
+                      hintStyle:textInput,
                       border: InputBorder.none),
                 ),
               ),
@@ -86,10 +82,10 @@ class InputLogin extends StatelessWidget {
                   controller: passwordField,
                   textAlign: TextAlign.center,
                   obscureText: true,
-                  style: textButton,
+                  style: textInput,
                     decoration: InputDecoration(
                     hintText: 'Mot de passe',
-                    hintStyle: textButton,
+                    hintStyle: textInput,
                     border: InputBorder.none),
                   ),
                 ),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../theme/theme_styles.dart';
-import '../../account/account_page.dart';
 import '../../signup_page.dart';
 
 class TextButtonSignup extends StatelessWidget {
@@ -14,7 +12,7 @@ class TextButtonSignup extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const AccountPage()),
+            MaterialPageRoute(builder: (context) => const SignupPage()),
           );
         }
         , child: Text('Pas encore de  compte ?, inscrivez-vous',

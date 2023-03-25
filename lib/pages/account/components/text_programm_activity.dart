@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../pages/programm_activity.dart';
+import 'package:mon_app_sport/theme/theme_styles.dart';
+import '../../programm_activity.dart';
 
 
 class TextProgrammActivity extends StatelessWidget {
@@ -16,11 +17,7 @@ class TextProgrammActivity extends StatelessWidget {
           );
         },
         child: Text('accéder au progamme ',
-          style: GoogleFonts.comfortaa(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),)
+          style: textButton,),
 
     );
   }

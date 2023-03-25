@@ -20,7 +20,7 @@ class InitializeApp extends StatelessWidget {
             return const ErrorFirebase();
           }
           if (snapshot.connectionState == ConnectionState.done) {
-            return const MyApp();
+            return const AccountPage();
           }
           return const MyApp();
         });

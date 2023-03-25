@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
 
-import '../../screens/get_user_id.dart';
+import '../../../screens/get_user_id.dart';
 
 FirebaseStorage storage = FirebaseStorage.instance;
 Reference storageRef = storage.ref('Users').child('test.png');
@@ -38,11 +39,17 @@ class _imagePictureState extends State<ImagePicture> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 200,
-      width: 200,
+      width: 200, decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+        color: kBorder,
+        width: 2,
+    ),
+    ),
       child: CircleAvatar(
-        backgroundColor: Colors.grey,
+        backgroundColor: kBody,
         backgroundImage: userPhotoUrl == null
             ? NetworkImage(defaultUrl!)
             : NetworkImage(userPhotoUrl!),
@@ -50,4 +57,6 @@ class _imagePictureState extends State<ImagePicture> {
     );
   }
 }
+
+
 
