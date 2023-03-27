@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mon_app_sport/theme/theme_styles.dart';
-import '../../tracking_progress_page.dart';
+import '../../activity_traking/tracking_progress_page.dart';
 
 
 class TextActivityTracking extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mon_app_sport/function/login_to_firebase.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
-import 'package:mon_app_sport/theme/theme_styles.dart';
+
+import '../../../function/login_to_firebase.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -25,7 +25,7 @@ class LoginButton extends StatelessWidget {
           color: kTextButton,
         ),
       ),
-      onPressed: () {loginToFirebase();},
+      onPressed: () {  loginToFirebase(context);},
     );
   }
 }

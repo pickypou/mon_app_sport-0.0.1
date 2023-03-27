@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mon_app_sport/Components/appbararrow.dart';
 import 'package:mon_app_sport/Components/week_programm/first_week_card.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
 import '../Components/week_programm/body_position_card.dart';
-import '../Widgets/title_programm_activity.dart';
+import '../Widgets/title.dart';
 
 class ProgrammeActivity extends StatelessWidget {
   const ProgrammeActivity({super.key});
@@ -12,16 +14,17 @@ class ProgrammeActivity extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:  Scaffold(
-        appBar: AppBar(
-          title: const Text('suivre le programme'),
-        ),
+        backgroundColor: kBody,
+        appBar: const MyAppBarArrow(title: 'suivre le programme'),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:[
-              titleProgrammActivity,
+              const TitleWidget(titleText: "Je démarre le progamme"),
               const BodyPositionCard(),
               const FirstWeek(),
+
+
               Container(
                 child:  ElevatedButton(
                   style: ElevatedButton.styleFrom(

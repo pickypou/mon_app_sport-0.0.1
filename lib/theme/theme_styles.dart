@@ -39,5 +39,15 @@ TextStyle titleAppBar = GoogleFonts.lora(
   fontWeight: FontWeight.w200,
   color: kTextColors,
 );
+TextStyle titleCard = GoogleFonts.lora(
+  fontSize: 18,
+  fontWeight: FontWeight.w300,
+  color: kTextCard,
+);
+TextStyle subTitleCard = GoogleFonts.lora(
+  fontSize: 16,
+  fontWeight: FontWeight.w200,
+  color: kTextCard,
+);
 
 

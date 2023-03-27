@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mon_app_sport/function/update_item.dart';
-import '../variables/my_variables.dart';
+import '../../../variables/my_variables.dart';
 
 class ActivityTracking extends StatelessWidget {
   const ActivityTracking({super.key});

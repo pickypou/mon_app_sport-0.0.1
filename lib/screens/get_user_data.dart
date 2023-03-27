@@ -4,6 +4,9 @@ import 'package:mon_app_sport/pages/account/info_user/user_info.dart';
 
 import 'get_user_id.dart';
 
+
+
+
 class GetUserData extends StatelessWidget {
   final String fieldName;
   final TextStyle fieldStyle;
@@ -14,6 +17,8 @@ class GetUserData extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var GetUserId;
+    String userID = GetUserId.currentUser!.uid;
     CollectionReference users = firestore.collection('Users');
     return FutureBuilder<DocumentSnapshot>(
       future: users.doc(userID).get(),

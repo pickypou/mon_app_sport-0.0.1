@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mon_app_sport/function/signup_to_firebase.dart';
+import 'package:mon_app_sport/theme/theme_styles.dart';
+
+import '../../../theme/theme_colors.dart';
 
 
 
@@ -16,7 +19,7 @@ class InputSection extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.white30),
+            border: Border.all(width: 1, color: kIcon),
             borderRadius: BorderRadius.circular(30),
             color: const Color.fromRGBO(255, 255, 255, 0.1),
           ),
@@ -28,11 +31,11 @@ class InputSection extends StatelessWidget {
                 width: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.white),
+                    color: Colors.white60),
                 child: const Icon(
                   Icons.people_outline,
                   size: 30,
-                  color: Colors.greenAccent,
+                  color: kIcon,
                 ),
               ),
               SizedBox(
@@ -41,14 +44,10 @@ class InputSection extends StatelessWidget {
                 child: TextField(
                   controller: pseudoSignupField,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.comfortaa(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: textInput,
                   decoration: InputDecoration(
                       hintText: 'Pseudo',
-                      hintStyle: GoogleFonts.comfortaa(color: Colors.white),
+                      hintStyle: textInput,
                       border: InputBorder.none),
                 ),
               ),
@@ -60,7 +59,7 @@ class InputSection extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.white30),
+            border: Border.all(width: 1, color: kIcon),
             borderRadius: BorderRadius.circular(30),
             color: const Color.fromRGBO(255, 255, 255, 0.1),
           ),
@@ -72,11 +71,11 @@ class InputSection extends StatelessWidget {
                 width: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.white),
+                    color: Colors.white60),
                 child: const Icon(
                   Icons.mail_outline,
                   size: 30,
-                  color: Colors.greenAccent,
+                  color: kIcon,
                 ),
               ),
               SizedBox(
@@ -86,14 +85,10 @@ class InputSection extends StatelessWidget {
                   controller: emailSignupField,
                   textAlign: TextAlign.center,
 
-                  style: GoogleFonts.comfortaa(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: textInput,
                   decoration: InputDecoration(
                       hintText: 'email',
-                      hintStyle: GoogleFonts.comfortaa(color: Colors.white),
+                      hintStyle: textInput,
                       border: InputBorder.none),
                 ),
               ),
@@ -105,7 +100,7 @@ class InputSection extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-            border: Border.all(width: 1, color: Colors.white30),
+            border: Border.all(width: 1, color: kIcon),
             borderRadius: BorderRadius.circular(30),
             color: const Color.fromRGBO(255, 255, 255, 0.1),
           ),
@@ -117,11 +112,11 @@ class InputSection extends StatelessWidget {
                 width: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.white),
+                    color: Colors.white60),
                 child: const Icon(
                   Icons.lock_outline,
                   size: 30,
-                  color: Colors.greenAccent,
+                  color: kIcon,
                 ),
               ),
               SizedBox(
@@ -131,14 +126,10 @@ class InputSection extends StatelessWidget {
                   controller: passwordSignupField,
                   textAlign: TextAlign.center,
                   obscureText: true,
-                  style: GoogleFonts.comfortaa(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: textInput,
                   decoration: InputDecoration(
                       hintText: 'Mot de passe',
-                      hintStyle: GoogleFonts.comfortaa(color: Colors.white),
+                      hintStyle: textInput,
                       border: InputBorder.none),
                 ),
               ),

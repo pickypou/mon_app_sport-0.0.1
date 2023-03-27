@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../theme/theme_colors.dart';
 import '../theme/theme_styles.dart';
 
-class MyAppBar extends StatelessWidget with PreferredSizeWidget {
+class MyAppBarArrow extends StatelessWidget with PreferredSizeWidget {
   final String title;
-  final Function()? onDrawerButtonPressed;
+  
 
-  const MyAppBar({
+  const MyAppBarArrow({
     Key? key,
     required this.title,
-    this.onDrawerButtonPressed,
+   
   }) : super(key: key);
 
   @override
@@ -22,6 +22,10 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
       backgroundColor: kBody,
       title: Text(title,style: titleAppBar,),
       centerTitle: true,
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () { Navigator.pop(context); },
+      ),
     );
   }
 }

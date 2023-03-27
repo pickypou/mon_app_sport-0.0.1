@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:mon_app_sport/Components/card.dart';
 
 import 'advice_position.dart';
 
@@ -8,26 +9,16 @@ class BodyPositionCard extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: TextButton(
-       child: Card(
-         child: Column(
-           mainAxisSize: MainAxisSize.min,
-           children: const <Widget>[
-             ListTile(
-               title: Text('Conseil sur la position a tenir'),
-               subtitle: Text('Garder la tête...'),
-             )
-           ],
-         ),
-       ),
-        onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context)=> const AdvicePosition())
-            );
-        },
-      ),
+    return ClickableCard(
+      title: 'Titre de la carte',
+      subtitle: 'Sous-titre de la carte',
+      onPressed: () {
+       Navigator.push(
+           context,
+           MaterialPageRoute(builder: (context)=> const  AdvicePosition()));
+      },
     );
+
+
   }
 }

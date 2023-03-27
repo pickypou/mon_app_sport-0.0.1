@@ -9,3 +9,5 @@ const Color kIcon = Color(0xFF6E466C);
 const Color kButton = Color(0xFF6E466C);
 const Color kTextButton = Color(0xFFF1E4F3);
 const Color kBorder = Color(0xFF6E466C);
+const Color kTextCard = Color(0xFFF1E4F3);
+

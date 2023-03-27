@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mon_app_sport/pages/account/account_page.dart';
 import '../main.dart';
 import 'error_firebase.dart';
 

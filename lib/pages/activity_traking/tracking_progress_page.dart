@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mon_app_sport/Components/appbar.dart';
+import 'package:mon_app_sport/Components/appbararrow.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
 
-import '../Components/activity_traking.dart';
-import '../Widgets/title_activity_tracking.dart';
+import 'components/activity_traking.dart';
+import '../../Widgets/title.dart';
 
 class TrackingProgressPage extends StatelessWidget {
   const TrackingProgressPage({super.key});
@@ -12,14 +15,12 @@ class TrackingProgressPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('suivre mon activité'),
-          backgroundColor: Colors.greenAccent.shade200,
-        ),
+        backgroundColor: kBody,
+        appBar: const MyAppBarArrow(title: 'suivre mon activité',),
         body: Column(
           children: [
-            Center(
-              child: titleActitvityTracking,
+            const Center(
+              child: TitleWidget(titleText: "suivre mon activité"),
             ),
             const Expanded(
               child: ActivityTracking(),
