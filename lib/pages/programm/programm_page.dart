@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mon_app_sport/Components/appbararrow.dart';
-import 'package:mon_app_sport/Components/week_programm/first_week_card.dart';
+import 'package:mon_app_sport/Components/appbar_arrow.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
-import '../Components/week_programm/body_position_card.dart';
-import '../Widgets/title.dart';
+import 'components/first_week_card.dart';
+import 'components/body_position_card.dart';
+import '../../Widgets/title.dart';
 
 class ProgrammeActivity extends StatelessWidget {
   const ProgrammeActivity({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home:  Scaffold(
+    return
+        Scaffold(
         backgroundColor: kBody,
         appBar: const MyAppBarArrow(title: 'suivre le programme'),
         body: SingleChildScrollView(
@@ -50,7 +49,7 @@ class ProgrammeActivity extends StatelessWidget {
             ],
           ),
         ),
-      ),
+
     );
   }
 

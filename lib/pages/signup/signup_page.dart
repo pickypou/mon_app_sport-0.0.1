@@ -4,9 +4,9 @@ import 'package:mon_app_sport/theme/theme_colors.dart';
 
 
 
+import '../../Widgets/title.dart';
 import 'components/input_signup.dart';
 import 'components/signup_button.dart';
-import 'widgets/title_signup.dart';
 import '../home/components/text_button_login.dart';
 
 class SignupPage extends StatelessWidget {
@@ -21,13 +21,13 @@ class SignupPage extends StatelessWidget {
           child:Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                titleSignup,
-                const SizedBox(height: 20,),
-                const  InputSection(),
-                const SizedBox(height: 50),
-                const SignupButton(),
-                const TextButtonLogin(),
+              children: const [
+                TitleWidget(titleText: "inscription"),
+                SizedBox(height: 20,),
+                InputSection(),
+                SizedBox(height: 50),
+                SignupButton(),
+                TextButtonLogin(),
               ],
             ),
           )

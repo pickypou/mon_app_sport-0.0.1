@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mon_app_sport/Components/week_programm/first_week/tuesday/save_card_tuesday.dart';
-import 'package:mon_app_sport/Widgets/programm/first_week/tuesday/tuesday_activity.dart';
-import 'package:mon_app_sport/Widgets/programm/first_week/tuesday/tuesday_title.dart';
+import 'package:mon_app_sport/pages/wekk_programm/first_week/thursday/save_thursday.dart';
+import '../../../../Components/chronometre.dart';
+import '../../../../Widgets/programm/first_week/thursday/thursday_activity.dart';
+import '../../../../Widgets/programm/first_week/thursday/thursday_title.dart';
 
-import '../../../chronometre.dart';
-
-class TuesdayActivity extends StatelessWidget {
-  const TuesdayActivity({super.key});
+class ThursdayActivity extends StatelessWidget {
+  const ThursdayActivity({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class TuesdayActivity extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('Mardi'),
+            title: const Text('jeudi'),
           ),
           body: Container(
             color: Colors.black.withOpacity(0.6),
@@ -24,14 +23,18 @@ class TuesdayActivity extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  tuesdayTitle,
+                  thursdayTitle,
                   const Chronometer(),
-                  tuesdayActivity,
-                  const SizedBox(height: 20,),
-                  const CardTuesdaySave(),
-                  const SizedBox(height: 20,),
+                  thursdayActivity,
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const CardThursdaySave(),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Container(
-                    child:  ElevatedButton(
+                    child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         padding: const EdgeInsets.fromLTRB(130, 20, 130, 20),
@@ -51,9 +54,7 @@ class TuesdayActivity extends StatelessWidget {
                       },
                     ),
                   )
-
                 ],
-
               ),
             ),
           )),

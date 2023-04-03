@@ -1,40 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mon_app_sport/Components/week_programm/first_week/thursday/save_thursday.dart';
-import '../../../../Widgets/programm/first_week/thursday/thursday_activity.dart';
-import '../../../../Widgets/programm/first_week/thursday/thursday_title.dart';
-import '../../../chronometre.dart';
+import 'package:mon_app_sport/Components/appbar_arrow.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
+import '../widgets/position_advice.dart';
 
-class ThursdayActivity extends StatelessWidget {
-  const ThursdayActivity({super.key});
+class AdvicePosition extends StatelessWidget {
+  const AdvicePosition({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('jeudi'),
-          ),
-          body: Container(
-            color: Colors.black.withOpacity(0.6),
-            child: SingleChildScrollView(
+    return  Scaffold(
+      backgroundColor: kBody,
+          appBar: const MyAppBarArrow(title: 'position',),
+          body: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.fromLTRB(20, 60, 20, 30),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  thursdayTitle,
-                  const Chronometer(),
-                  thursdayActivity,
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const CardThursdaySave(),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  programmAdvice,
+                  const SizedBox(height: 30),
                   Container(
-                    child: ElevatedButton(
+                    child:  ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         padding: const EdgeInsets.fromLTRB(130, 20, 130, 20),
@@ -55,9 +43,12 @@ class ThursdayActivity extends StatelessWidget {
                     ),
                   )
                 ],
-              ),
+              )
             ),
-          )),
+          ),
+
     );
+
   }
+
 }

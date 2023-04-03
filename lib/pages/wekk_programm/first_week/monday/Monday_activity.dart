@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mon_app_sport/Components/week_programm/first_week/monday/save_monday.dart';
+import 'package:mon_app_sport/pages/wekk_programm/first_week/monday/save_monday.dart';
 
 import '../../../../Widgets/programm/first_week/monday/monday_activity.dart';
 import '../../../../Widgets/programm/first_week/monday/monday_title.dart';
-import '../../../chronometre.dart';
+import '../../../../Components/chronometre.dart';
 
 class MondayActivity extends StatelessWidget {
   const MondayActivity({super.key});

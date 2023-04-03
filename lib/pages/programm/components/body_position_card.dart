@@ -10,8 +10,8 @@ class BodyPositionCard extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return ClickableCard(
-      title: 'Titre de la carte',
-      subtitle: 'Sous-titre de la carte',
+      title: 'Conseil sur la position a tenir',
+      subtitle: 'Garder la tête...',
       onPressed: () {
        Navigator.push(
            context,

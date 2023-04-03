@@ -4,8 +4,8 @@ import 'package:mon_app_sport/pages/home/widgets/subtitle_home.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 
 import '../../Components/appbar.dart';
+import '../../Widgets/title.dart';
 import 'components/text_button_login.dart';
-import 'widgets/title_home.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,7 +21,8 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            titleHome,
+            const TitleWidget(titleText: "Unipampa Push"),
+
             const SizedBox(
               height: 50,
             ),

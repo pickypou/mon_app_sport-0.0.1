@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mon_app_sport/Components/appbar.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
+import '../../Widgets/title.dart';
 import 'components/login_button.dart';
 import 'components/input_login.dart';
 import 'components/text_button_signup.dart';
-import 'widgets/title_connexion.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -19,21 +19,22 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
+            children: const [
+              SizedBox(
                 height: 80,
               ),
-              titleConnexion,
-              const SizedBox(
+          TitleWidget(titleText: "connexion"),
+
+              SizedBox(
                 height: 20,
               ),
-              const InputLogin(),
-              const SizedBox(
+              InputLogin(),
+              SizedBox(
                 height: 30,
               ),
-              const LoginButton(),
-              const SizedBox(height: 50),
-              const TextButtonSignup()
+              LoginButton(),
+              SizedBox(height: 50),
+              TextButtonSignup()
             ],
           ),
         ),

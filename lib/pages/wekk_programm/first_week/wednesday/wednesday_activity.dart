@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mon_app_sport/Components/week_programm/first_week/wednesday/save_wednesday.dart';
 import 'package:mon_app_sport/Widgets/programm/first_week/wednesday/wednesday_title.dart';
+import 'package:mon_app_sport/pages/wekk_programm/first_week/wednesday/save_wednesday.dart';
 
 
-import '../../../chronometre.dart';
+import '../../../../Components/chronometre.dart';
 
 class wednesdayActivity extends StatelessWidget {
   const wednesdayActivity({super.key});

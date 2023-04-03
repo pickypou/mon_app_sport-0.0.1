@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../pages/account/account_page.dart';
 
 FirebaseAuth _auth = FirebaseAuth.instance;
+
 final emailField = TextEditingController();
 final passwordField = TextEditingController();
 

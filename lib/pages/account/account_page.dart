@@ -4,7 +4,6 @@ import 'package:mon_app_sport/pages/account/components/signout_button.dart';
 import 'package:mon_app_sport/pages/account/components/text_activity_tracking.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 
-import 'info_user/image_picture.dart';
 import 'info_user/profile_picture.dart';
 import 'components/text_programm_activity.dart';
 import 'info_user/user_info.dart';
@@ -32,15 +31,15 @@ class AccountPage extends StatelessWidget {
                 height: 20,
               ),
 
-              // const SizedBox(
-              //height: 150,
-              // child: UserInfo(),
-              // ),
+               const SizedBox(
+            height: 140,
+              child: UserInfo(),
+              ),
 
               const ImagePicture(),
 
               const SizedBox(
-                height: 110,
+                height: 205,
                 child: ProfilePicture(),
               ),
 

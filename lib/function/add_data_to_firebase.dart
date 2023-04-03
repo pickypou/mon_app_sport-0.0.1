@@ -1,14 +1,13 @@
-
 import 'package:intl/intl.dart';
-
+import 'package:intl/date_symbol_data_local.dart' ;
 import '../variables/my_variables.dart';
 
 void addDataToFirebase(){
+  initializeDateFormatting('fr_FR', null);
   try{
     var now = DateTime.now();
-    var formatter = DateFormat('dd-MM-yyyy');
-    var hourAndMinutes = DateFormat('HH:MM');
-
+    var formatter = DateFormat('EEEE dd MMMM yyyy','fr_FR');
+    var hourAndMinutes = DateFormat('HH:mm');
 
     databaseReference.collection('items').add({
       "time": hourAndMinutes.format(now),
@@ -16,11 +15,7 @@ void addDataToFirebase(){
       "done": false,
     }).then((value) => print(value.id));
     myController.clear();
-  }catch(error) {
+  } catch(error) {
     print(error.toString());
   }
 }
-
-
-
-

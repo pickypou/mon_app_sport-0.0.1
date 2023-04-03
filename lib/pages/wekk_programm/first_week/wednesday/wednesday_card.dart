@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/Components/week_programm/first_week/first_week_days.dart';
+import 'package:mon_app_sport/pages/wekk_programm/first_week/wednesday/wednesday_activity.dart';
 
 
-class FirstWeek extends StatelessWidget{
-  const FirstWeek({super.key});
+
+class WednesdayCard extends StatelessWidget{
+  const WednesdayCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +14,21 @@ class FirstWeek extends StatelessWidget{
         child: Card(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: const <Widget>[
+            children:  const <Widget>[
               ListTile(
-                title: Text("Ma première semaine d'entrainement"),
+                title: Text("Mercredi "),
                 subtitle: Text("c'est parti"),
-              )
+              ),
+
+
             ],
           ),
+
         ),
         onPressed: (){
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context)=> const WeekDays())
+              MaterialPageRoute(builder: (context)=> const wednesdayActivity())
           );
         },
       ),

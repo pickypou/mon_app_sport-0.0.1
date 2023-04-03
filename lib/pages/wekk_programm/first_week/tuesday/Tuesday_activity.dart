@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../Widgets/programm/position_advice.dart';
+import 'package:mon_app_sport/Widgets/programm/first_week/tuesday/tuesday_activity.dart';
+import 'package:mon_app_sport/Widgets/programm/first_week/tuesday/tuesday_title.dart';
+import 'package:mon_app_sport/pages/wekk_programm/first_week/tuesday/save_card_tuesday.dart';
 
-class AdvicePosition extends StatelessWidget {
-  const AdvicePosition({super.key});
+import '../../../../Components/chronometre.dart';
+
+class TuesdayActivity extends StatelessWidget {
+  const TuesdayActivity({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +15,21 @@ class AdvicePosition extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('ma page perso'),
+            title: const Text('Mardi'),
           ),
-          body: SingleChildScrollView(
-            child: Container(
-              margin: const EdgeInsets.fromLTRB(20, 60, 20, 30),
+          body: Container(
+            color: Colors.black.withOpacity(0.6),
+            child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  programmAdvice,
-                  const SizedBox(height: 30),
+                  tuesdayTitle,
+                  const Chronometer(),
+                  tuesdayActivity,
+                  const SizedBox(height: 20,),
+                  const CardTuesdaySave(),
+                  const SizedBox(height: 20,),
                   Container(
                     child:  ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -43,13 +51,12 @@ class AdvicePosition extends StatelessWidget {
                       },
                     ),
                   )
+
                 ],
-              )
+
+              ),
             ),
-          ),
-      ),
+          )),
     );
-
   }
-
 }

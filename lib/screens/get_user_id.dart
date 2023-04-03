@@ -1,20 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../function/login_to_firebase.dart';
 import '../pages/account/account_page.dart';
 
- String? userID;
+String? userID;
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class GetUserId extends StatefulWidget {
+  const GetUserId({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  _GetUserIdState createState() => _GetUserIdState();
 }
 
-class _LoginState extends State<Login> {
+class _GetUserIdState extends State<GetUserId> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  String? userID;
 
   @override
   void initState() {
@@ -25,6 +24,7 @@ class _LoginState extends State<Login> {
   Future<void> _checkCurrentUser() async {
     User? user = _auth.currentUser;
     if (user != null) {
+      userID = user.uid;
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const AccountPage()),
@@ -32,61 +32,9 @@ class _LoginState extends State<Login> {
     }
   }
 
-  Future<void> signIn() async {
-    try {
-      UserCredential userCredential =
-      await _auth.signInWithEmailAndPassword(
-        email: emailField.text.trim(),
-        password: passwordField.text.trim(),
-      );
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const AccountPage()),
-      );
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('User not found'),
-              content: const Text('No user found for that email.'),
-              actions: <Widget>[
-                TextButton(
-                  child: const Text('OK'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ],
-            );
-          },
-        );
-      } else if (e.code == 'wrong-password') {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Wrong password'),
-              content: const Text('Wrong password provided for that user.'),
-              actions: <Widget>[
-                TextButton(
-                  child: const Text('OK'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ],
-            );
-          },
-        );
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Container(); // Retourne un widget quelconque ici, car on n'a pas besoin d'afficher quoi que ce soit pour cette classe.
   }
 }

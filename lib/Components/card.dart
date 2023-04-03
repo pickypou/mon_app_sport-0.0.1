@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mon_app_sport/theme/theme_colors.dart';
+
+import '../theme/theme_styles.dart';
 
 class ClickableCard extends StatelessWidget {
   final String title;
@@ -17,12 +20,13 @@ class ClickableCard extends StatelessWidget {
     return InkWell(
       onTap: () => onPressed(),
       child: Card(
+        color: kIcon,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             ListTile(
-              title: Text(title),
-              subtitle: Text(subtitle),
+              title: Text(title, style: titleCard,),
+              subtitle: Text(subtitle, style: subTitleCard,),
             )
           ],
         ),

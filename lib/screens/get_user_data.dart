@@ -1,47 +1,46 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/pages/account/info_user/user_info.dart';
-
-import 'get_user_id.dart';
-
-
-
 
 class GetUserData extends StatelessWidget {
+  final String documentId;
   final String fieldName;
-  final TextStyle fieldStyle;
-  const GetUserData({
-    Key? key,
-    required this.fieldName,
-    required this.fieldStyle,
-  }) : super(key: key);
+  final String fieldTitle;
+
+  const GetUserData(this.documentId, this.fieldName, this.fieldTitle);
+
   @override
   Widget build(BuildContext context) {
-    var GetUserId;
-    String userID = GetUserId.currentUser!.uid;
-    CollectionReference users = firestore.collection('Users');
-    return FutureBuilder<DocumentSnapshot>(
-      future: users.doc(userID).get(),
-      builder:
-          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+    CollectionReference<Map<String, dynamic>> users =
+    FirebaseFirestore.instance.collection('Users');
+    return FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+      future: users.doc(documentId).get(),
+      builder: (BuildContext context,
+          AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasError) {
-          return Text(
-            'Un problème est survenu',
-            style: fieldStyle,
-          );
+          return const ListTile(
+              title: Text(
+                'Un problème est survenu',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ));
         }
         if (snapshot.connectionState == ConnectionState.done) {
-          Map<String, dynamic> data =
-          snapshot.data!.data() as Map<String, dynamic>;
-          return Text(
-            data[fieldName],
-            style: fieldStyle,
+          Map<String, dynamic>? data = snapshot.data?.data();
+          return ListTile(
+            title: Text(
+              data?[fieldName],
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            subtitle: Text(
+              fieldTitle,
+              style: const TextStyle(fontSize: 20),
+            ),
           );
         }
-        return Text(
-          'En cours de chargement',
-          style: fieldStyle,
-        );
+        return const ListTile(
+            title: Text(
+              'En cours de chargement',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ));
       },
     );
   }

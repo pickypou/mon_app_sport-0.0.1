@@ -5,11 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mon_app_sport/pages/account/account_page.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
-
 import '../../../screens/get_user_id.dart';
 import '../../../theme/theme_styles.dart';
 import '../../../variables/my_variables.dart';
-import 'image_picture.dart';
 
 class ProfilePicture extends StatefulWidget {
   const ProfilePicture({super.key});
@@ -19,9 +17,10 @@ class ProfilePicture extends StatefulWidget {
 
 class _ProfilePictureState extends State<ProfilePicture> {
   File? _images;
+  final picker = ImagePicker();
 
   Future uploadFile() async {
-    Reference storageRef = storage.ref('Users').child('$userID.png');
+    Reference storageRef = storage.ref('user').child('$userID.png');
     UploadTask uploadTask = storageRef.putFile(_images!);
     await uploadTask.whenComplete(() {
       print('Photo mise à jour');
@@ -47,7 +46,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
       if (pickedFile != null) {
         _images = File(pickedFile.path);
       } else {
-        print("Pas d'image selectionner.");
+        print('No image selected.');
       }
     });
   }
@@ -57,33 +56,36 @@ class _ProfilePictureState extends State<ProfilePicture> {
     return Scaffold(
       backgroundColor: kBody,
       body: Center(
-        child: Column(
-          children: [
-            _images == null
-                ?  Text(
-                    'Aucune image sélectionnée',style: text,
-                  )
-                : Image.file(_images!),
-
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kButton,
-                padding: const EdgeInsets.fromLTRB(70, 10, 70, 10),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
+        child: Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _images == null
+                  ? Text(
+                      'Aucune image sélectionnée',
+                      style: text,
+                    )
+                  : Image.file(_images!),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: kButton,
+                  padding: const EdgeInsets.fromLTRB(70, 10, 70, 10),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                ),
+                onPressed: uploadFile,
+                child: Text(
+                  'envoyer',
+                  style: GoogleFonts.lora(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w200,
+                    color: kTextButton,
+                  ),
                 ),
               ),
-              onPressed: uploadFile,
-              child: Text(
-                'envoyer',
-                style: GoogleFonts.lora(
-                  fontSize: 19,
-                  fontWeight: FontWeight.w200,
-                  color: kTextButton,
-                ),
-              ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -95,6 +97,61 @@ class _ProfilePictureState extends State<ProfilePicture> {
           size: 30,
           color: Colors.white60,
         ),
+      ),
+    );
+  }
+}
+
+FirebaseStorage storage = FirebaseStorage.instance;
+Reference storageRef = storage.ref('user').child('$userID.png');
+
+class ImagePicture extends StatefulWidget {
+  const ImagePicture({super.key});
+  @override
+  _imagePictureState createState() => _imagePictureState();
+}
+
+class _imagePictureState extends State<ImagePicture> {
+  String? userPhotoUrl;
+  String? defaultUrl =
+      'https://icon-library.com/images/default-profile-icon/default-profile-icon-16.jpg';
+
+  @override
+  void initState() {
+    super.initState();
+    getProfileImage();
+  }
+
+  getProfileImage() {
+    Reference ref = storage.ref('user').child('$userID.png');
+    ref.getDownloadURL().then((downloadUrl) {
+      setState(() {
+        userPhotoUrl = downloadUrl.toString();
+      });
+    }).catchError((e) {
+      setState(() {
+        print('Un problème est survenu: ${e.error}');
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 140,
+      width: 140,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: kBorder,
+          width: 2,
+        ),
+      ),
+      child: CircleAvatar(
+        backgroundColor: kBody,
+        backgroundImage: userPhotoUrl == null
+            ? NetworkImage(defaultUrl!)
+            : NetworkImage(userPhotoUrl!),
       ),
     );
   }

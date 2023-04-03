@@ -30,7 +30,7 @@ TextStyle button = GoogleFonts.lora(
   color: kTextButton,
 );
 TextStyle text = GoogleFonts.lora(
-  fontSize: 18,
+  fontSize: 16,
   fontWeight: FontWeight.w200,
   color: kTextColors,
 );
@@ -40,14 +40,17 @@ TextStyle titleAppBar = GoogleFonts.lora(
   color: kTextColors,
 );
 TextStyle titleCard = GoogleFonts.lora(
-  fontSize: 18,
-  fontWeight: FontWeight.w300,
+  fontSize: 19,
+  fontWeight: FontWeight.w400,
   color: kTextCard,
 );
 TextStyle subTitleCard = GoogleFonts.lora(
   fontSize: 16,
   fontWeight: FontWeight.w200,
   color: kTextCard,
+);
+TextStyle textColor = GoogleFonts.lora(
+fontSize: 20,  fontWeight: FontWeight.w800,
 );
 
 

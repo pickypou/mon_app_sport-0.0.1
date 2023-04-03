@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/Components/week_programm/first_week/thursday/thursday_activity.dart';
+import 'package:mon_app_sport/pages/wekk_programm/first_week/thursday/thursday_activity.dart';
 
 
 
