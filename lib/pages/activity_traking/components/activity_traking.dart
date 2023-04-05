@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mon_app_sport/function/update_item.dart';
 import '../../../variables/my_variables.dart';
@@ -8,8 +9,10 @@ class ActivityTracking extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var user = FirebaseAuth.instance.currentUser;
+    var itemsRef = databaseReference.collection('users').doc(user?.uid).collection('items');
     return StreamBuilder(
-      stream: databaseReference.collection('items').snapshots(),
+      stream: itemsRef.snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (!snapshot.hasData) return const Text('Loading...');
         return ListView(
@@ -17,10 +20,8 @@ class ActivityTracking extends StatelessWidget {
             return CheckboxListTile(
               title: Text(document['time']),
               subtitle: Text(document['date']),
-
               value: document['done'],
               onChanged: (bool? value) {
-
                 updateItem(document.id, value!);
               },
             );

@@ -3,7 +3,7 @@
    <application
         android:label="mon_app_sport"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_planche">
         <activity
             android:name=".MainActivity"
             android:exported="true"

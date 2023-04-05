@@ -4,6 +4,7 @@ import 'package:mon_app_sport/pages/account/components/signout_button.dart';
 import 'package:mon_app_sport/pages/account/components/text_activity_tracking.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 
+import 'info_user/image_profile.dart';
 import 'info_user/profile_picture.dart';
 import 'components/text_programm_activity.dart';
 import 'info_user/user_info.dart';
