@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import '../pages/account/account_page.dart';
 
 String? userID;
@@ -13,7 +14,6 @@ class GetUserId extends StatefulWidget {
 
 class _GetUserIdState extends State<GetUserId> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  String? userID;
 
   @override
   void initState() {
@@ -24,17 +24,19 @@ class _GetUserIdState extends State<GetUserId> {
   Future<void> _checkCurrentUser() async {
     User? user = _auth.currentUser;
     if (user != null) {
-      userID = user.uid;
+      setState(() {
+        userID = user.uid;
+      });
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const AccountPage()),
       );
+      userID = user.uid;
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Container(); // Retourne un widget quelconque ici, car on n'a pas besoin d'afficher quoi que ce soit pour cette classe.
+    return Container();
   }
 }
