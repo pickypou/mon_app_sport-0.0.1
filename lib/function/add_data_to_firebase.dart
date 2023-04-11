@@ -11,10 +11,10 @@ void addDataToFirebase(){
     var formatter = DateFormat('EEEE dd MMMM yyyy','fr_FR');
     var hourAndMinutes = DateFormat('HH:mm');
 
-    databaseReference.collection('users').doc(user?.uid).collection('items').add({
+    databaseReference.collection('users').doc(user?.uid).collection('activities').add({
       "time": hourAndMinutes.format(now),
       "date": formatter.format(now).toString(),
-      "done": false,
+      "done": true,
     }).then((value) => print(value.id));
     myController.clear();
   } catch(error) {

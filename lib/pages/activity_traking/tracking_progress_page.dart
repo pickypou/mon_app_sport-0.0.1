@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mon_app_sport/Components/appbar.dart';
 import 'package:mon_app_sport/Components/appbar_arrow.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 
-import 'components/activity_traking.dart';
-import '../../Widgets/title.dart';
+import '../../Components/progressbar.dart';
+import 'components/activity_tracking.dart';
 
 class TrackingProgressPage extends StatelessWidget {
-  const TrackingProgressPage({super.key});
+  const TrackingProgressPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,36 +14,14 @@ class TrackingProgressPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: kBody,
-        appBar: const MyAppBarArrow(title: 'suivre mon activité',),
+        appBar: const MyAppBarArrow(title: 'Suivre mon activité'),
         body: Column(
-          children: [
-            const Center(
-              child: TitleWidget(titleText: "suivre mon activité"),
+          children:  const [
+            SizedBox(height: 40,),
+            ProgressBar(),
+            Expanded(
+                child:ActivityTracking()
             ),
-            const Expanded(
-              child: ActivityTracking(),
-            ),
-            Container(
-              child:  ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  padding: const EdgeInsets.fromLTRB(130, 20, 130, 20),
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                  ),
-                ),
-                child: Text(
-                  "Retour".toUpperCase(),
-                  style: GoogleFonts.comfortaa(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            )
           ],
         ),
       ),

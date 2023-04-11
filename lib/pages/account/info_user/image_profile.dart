@@ -50,7 +50,7 @@ class _ImagePictureState extends State<ImagePicture> {
         shape: BoxShape.circle,
         border: Border.all(
           color: kBorder,
-          width: 2,
+          width: 4,
         ),
       ),
       child: CircleAvatar(

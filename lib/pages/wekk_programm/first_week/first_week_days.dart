@@ -20,34 +20,14 @@ class WeekDays extends StatelessWidget {
         title: 'Ma première semaine',
       ),
       body: Column(
-        children: [
-          const TitleWidget(titleText: "semaine-1"),
-          const SizedBox(height: 15),
-          const MondayCard(),
-          const TuesdayCard(),
-          const WednesdayCard(),
-          const ThursdayCard(),
-          Container(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                padding: const EdgeInsets.fromLTRB(130, 20, 130, 20),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                ),
-              ),
-              child: Text(
-                "Retour".toUpperCase(),
-                style: GoogleFonts.comfortaa(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                ),
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          )
+        children: const [
+          TitleWidget(titleText: "semaine-1"),
+          SizedBox(height: 15),
+          MondayCard(),
+          TuesdayCard(),
+          WednesdayCard(),
+          ThursdayCard(),
+
         ],
       ),
     );

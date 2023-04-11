@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mon_app_sport/pages/wekk_programm/first_week/monday/save_monday.dart';
 
+import '../../../../Components/appbar_arrow.dart';
 import '../../../../Widgets/programm/first_week/monday/monday_activity.dart';
 import '../../../../Widgets/programm/first_week/monday/monday_title.dart';
 import '../../../../Components/chronometre.dart';
@@ -14,9 +15,7 @@ class MondayActivity extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Lundi'),
-          ),
+          appBar:  const MyAppBarArrow(title: 'je suis le programme'),
           body: Container(
             color: Colors.black.withOpacity(0.6),
             child: SingleChildScrollView(
@@ -30,27 +29,9 @@ class MondayActivity extends StatelessWidget {
                   const SizedBox(height: 20,),
                   const CardMondaySave(),
                   const SizedBox(height: 20,),
-                  Container(
-                    child:  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        padding: const EdgeInsets.fromLTRB(130, 20, 130, 20),
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                        ),
-                      ),
-                      child: Text(
-                        "Retour".toUpperCase(),
-                        style: GoogleFonts.comfortaa(
-                          color: Colors.black,
-                          fontSize: 20.0,
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  )
+
+
+
 
                 ],
 

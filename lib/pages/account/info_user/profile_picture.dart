@@ -20,9 +20,6 @@ class _ProfilePictureState extends State<ProfilePicture> {
   File? _images;
   final picker = ImagePicker();
 
-
-
-
   void refreshPage(BuildContext context) {
     Navigator.pushReplacement(
       context,
@@ -45,6 +42,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
       }
     });
   }
+
   Future getCamera() async {
     final XFile? pickedFile =
     await picker.pickImage(source: ImageSource.camera);
@@ -57,6 +55,7 @@ class _ProfilePictureState extends State<ProfilePicture> {
       }
     });
   }
+
   Future uploadFile() async {
     String? userID = FirebaseAuth.instance.currentUser?.uid;
 

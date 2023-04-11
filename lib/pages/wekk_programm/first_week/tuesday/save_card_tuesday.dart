@@ -21,7 +21,7 @@ class CardTuesdaySave extends StatelessWidget {
             ]),
       ),
       onPressed: () {
-        addDataToFirebase();
+
       },
 
     );

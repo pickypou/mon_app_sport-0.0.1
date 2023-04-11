@@ -23,7 +23,8 @@ class MyAppBarArrow extends StatelessWidget with PreferredSizeWidget {
       title: Text(title,style: titleAppBar,),
       centerTitle: true,
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
+        icon: const Icon(Icons.arrow_back,
+        color: kButton,),
         onPressed: () { Navigator.pop(context); },
       ),
     );

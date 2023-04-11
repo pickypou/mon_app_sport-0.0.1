@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
         title: 'Unipampa Push',
       ),
       backgroundColor: kBody,
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
