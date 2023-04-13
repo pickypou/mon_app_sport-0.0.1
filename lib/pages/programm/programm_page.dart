@@ -15,7 +15,7 @@ class ProgrammeActivity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBody,
-      appBar: const MyAppBarArrow(title: 'je suis le programme'),
+      appBar: MyAppBarArrow(title: 'je suis le programme'),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

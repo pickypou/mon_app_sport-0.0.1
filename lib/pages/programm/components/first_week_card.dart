@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/pages/wekk_programm/first_week/first_week_days.dart';
 
 import '../../../Components/card.dart';
 
@@ -12,8 +11,7 @@ class FirstWeek extends StatelessWidget {
       title: "Ma première semaine d'entrainement",
       subtitle: "c'est parti",
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const WeekDays()));
+        Navigator.pushNamed(context,  '/FirstWeekDays');
       },
     );
   }

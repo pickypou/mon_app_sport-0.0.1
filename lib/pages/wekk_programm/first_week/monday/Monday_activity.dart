@@ -15,7 +15,7 @@ class MondayActivity extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar:  const MyAppBarArrow(title: 'je suis le programme'),
+          appBar:  MyAppBarArrow(title: 'je suis le programme'),
           body: Container(
             color: Colors.black.withOpacity(0.6),
             child: SingleChildScrollView(

@@ -9,14 +9,14 @@ import '../../../Widgets/title.dart';
 import '../../../theme/theme_colors.dart';
 import 'monday/monday_card.dart';
 
-class WeekDays extends StatelessWidget {
-  const WeekDays({super.key});
+class FirstWeekDays extends StatelessWidget {
+  const FirstWeekDays({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBody,
-      appBar: const MyAppBarArrow(
+      appBar: MyAppBarArrow(
         title: 'Ma première semaine',
       ),
       body: Column(

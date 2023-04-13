@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:mon_app_sport/Components/card.dart';
 
-import 'advice_position.dart';
 
 class BodyPositionCard extends StatelessWidget{
   const BodyPositionCard({super.key});
@@ -13,9 +12,9 @@ class BodyPositionCard extends StatelessWidget{
       title: 'Conseil sur la position a tenir',
       subtitle: 'Garder la tête...',
       onPressed: () {
-       Navigator.push(
+       Navigator.pushNamed(
            context,
-           MaterialPageRoute(builder: (context)=> const  AdvicePosition()));
+             '/AdvicePosition');
       },
     );
 

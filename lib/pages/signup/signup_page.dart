@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/Components/appbar.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
 
-
-
+import '../../Components/appbar_arrow.dart';
 import '../../Widgets/title.dart';
 import 'components/input_signup.dart';
 import 'components/signup_button.dart';
@@ -16,25 +14,25 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBody,
-        appBar: const MyAppBar(title: 'inscription',),
-        body: Container(
-          child:Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                TitleWidget(titleText: "inscription"),
-                SizedBox(height: 20,),
-                InputSection(),
-                SizedBox(height: 50),
-                SignupButton(),
-                TextButtonLogin(),
-              ],
+      appBar: MyAppBarArrow(
+        title: 'inscription',
+      ),
+      body: Container(
+          child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            TitleWidget(titleText: "inscription"),
+            SizedBox(
+              height: 20,
             ),
-          )
-          ),
+            InputSection(),
+            SizedBox(height: 50),
+            SignupButton(),
+            TextButtonLogin(),
+          ],
+        ),
+      )),
     );
   }
 }
-
-
-

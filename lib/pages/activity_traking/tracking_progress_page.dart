@@ -14,7 +14,7 @@ class TrackingProgressPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: kBody,
-        appBar: const MyAppBarArrow(title: 'Suivre mon activité'),
+        appBar: MyAppBarArrow(title: 'Suivre mon activité'),
         body: Column(
           children:  const [
             SizedBox(height: 40,),

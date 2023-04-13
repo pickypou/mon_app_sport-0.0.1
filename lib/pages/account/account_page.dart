@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mon_app_sport/Components/appbar.dart';
 import 'package:mon_app_sport/pages/account/components/signout_button.dart';
 import 'package:mon_app_sport/pages/account/components/text_activity_tracking.dart';
 import 'package:mon_app_sport/theme/theme_colors.dart';
-import '../../Components/progressbar.dart';
+import '../../Components/appbar_arrow.dart';
 import '../../screens/firestore_service.dart';
 import 'info_user/MyUserInfo.dart';
 import 'info_user/image_profile.dart';
@@ -12,7 +11,9 @@ import 'components/text_programm_activity.dart';
 import 'widgets/account_title.dart';
 
 class AccountPage extends StatefulWidget {
-  const AccountPage({Key? key});
+  const AccountPage({super.key});
+
+
 
   @override
   _AccountPageState createState() => _AccountPageState();
@@ -49,7 +50,7 @@ class _AccountPageState extends State<AccountPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: kBody,
-        appBar: const MyAppBar(
+        appBar: MyAppBarArrow(
           title: 'Ma page perso',
         ),
         body: SingleChildScrollView(

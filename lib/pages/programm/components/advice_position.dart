@@ -11,7 +11,7 @@ class AdvicePosition extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: kBody,
-          appBar: const MyAppBarArrow(title: 'position',),
+          appBar: MyAppBarArrow(title: 'position',),
           body: SingleChildScrollView(
             child: Container(
               margin: const EdgeInsets.fromLTRB(20, 60, 20, 30),
